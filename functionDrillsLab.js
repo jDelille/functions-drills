@@ -6,6 +6,12 @@
 
 //CODE HERE
 
+function helloWorld() {
+  console.log("Hello World");
+}
+
+helloWorld();
+
 
 ////////////////// PROBLEM 2 ////////////////////
 /*
@@ -15,6 +21,13 @@
 */
 
 //CODE HERE
+
+function printName(name) {
+  console.log(name)
+}
+
+printName("Justin");
+
 
 
 ////////////////// PROBLEM 3 ////////////////////
@@ -29,6 +42,11 @@
 
 //CODE HERE
 
+function greeting(name) {
+  console.log(`Hello, ${name}`);
+}
+
+greeting("Justin");
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -38,6 +56,13 @@
 */
 
 //CODE HERE
+
+function add(num1, num2) {
+  console.log(num1 + num2)
+}
+
+add(2, 3);
+
 
 
 ////////////////// PROBLEM 5 ////////////////////
@@ -50,6 +75,22 @@
 */
 
 //CODE HERE
+
+
+function nameCheck(name) {
+  if (name === 'Steven') {
+    return(`What is up ${name}?`)
+  } else if(name === 'Bryan') {
+    return(`Hey ${name}!`)
+  } else {
+    return(`Cool name ${name}`)
+  }
+}
+
+let nameGreeting = nameCheck('Steven');
+console.log(nameGreeting);
+
+
 
 
 ////////////////// PROBLEM 6 ////////////////////
@@ -65,6 +106,23 @@
 //CODE HERE
 
 
+function faveColorFinder(color) {
+  if(color === 'red') {
+    return(`${color} is a great color`)
+  } else if (color === 'green') {
+    return(`${color} is a solid favorite color`)
+  } else if (color === 'black') {
+    return('so trendy')
+  } else {
+    return('you need to evaluate your favorite color choice')
+  }
+}
+
+let colorRating = faveColorFinder('blue');
+console.log(colorRating);
+
+
+
 ////////////////// PROBLEM 7 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 /*
@@ -75,6 +133,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 
 //CODE HERE
 
+function printAllNames(array) {
+  for(let i=0; i < array.length; i++) {
+    console.log(array[i]);
+  }
+}
+printAllNames(namesArr)
 
 ////////////////// PROBLEM 8 ////////////////////
 /*
@@ -85,6 +149,17 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+
+function thatsOdd(aNumber) {
+  if(aNumber % 2 === 0) {
+    return("That's not odd!")
+  } else {
+    return("That is odd indeed!")
+  }
+}
+
+let oddChecker = thatsOdd(7);
+console.log(oddChecker);
 
 
 ////////////////// PROBLEM 9 ////////////////////
@@ -100,10 +175,25 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 
 //CODE HERE
 
+function bigOrSmall(arr) {
+  let answers = [] 
+  for(let i=0; i < arr.length; i++ ) {
+    if(arr[i] <= 100) {
+      answers.push('small')
+    } else {
+      answers.push('big')
+    }
+  }
+  return answers
+}
+
+
+console.log(bigOrSmall(bigOrSmallArray))
 
 ////////////////// PROBLEM 10 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
+
 /*
   Write a function that is called theEliminator, which takes in two arguments, contestants (which will each be an array of strings), and loser (which will be a string).
   The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
@@ -111,23 +201,54 @@ let loser = 'Glimmer'
 
 //CODE HERE
 
+function theEliminator (contestants, loser) {
+  for(let i=0; i < contestants.length; i++) {
+    if(contestants[i] === loser) {
+      contestants.splice(i, 1);
+    }
+  }
+  return contestants
+}
+
+console.log(theEliminator(contestants, loser))
+
 
 ////////////////// PROBLEM 11 ////////////////////
 let sampleString = "Hi, my name is Kylo."
 /*
-  Write a function that takes im one argument, a string. The function should then console.log that string, in entirely uppercase characters.
+  Write a function that takes in one argument, a string. The function should then console.log that string, in entirely uppercase characters.
 */
 
 //CODE HERE
+
+function upperCase(sampleString) {
+  return sampleString;
+}
+console.log(sampleString.toUpperCase())
+
+
 
 
 ////////////////// PROBLEM 12 ////////////////////
 /*
-  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
+  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. 
+  Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. 
+  Your function should return a total amount of chocolate frogs you were able to purchase.
   Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
 */
 
 //CODE HERE
+
+
+function buyer(gold) {
+  let chocolateFrog = 3;
+  let totalFrogs = gold / chocolateFrog
+  return totalFrogs
+
+
+}
+console.log(buyer(12));
+
 
 
 ////////////////// PROBLEM 13 ////////////////////
@@ -137,15 +258,41 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+function buyer(gold) {
+  let chocolateFrog = 3;
+  let totalFrogs = gold / chocolateFrog
+  return totalFrogs
+
+
+}
+
+console.log(Math.floor(buyer(4)));
+
 
 ////////////////// PROBLEM 14 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 /*
-  Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
+  Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order.
+  The function should return true, if it is sorted in ascending order, false if it is not.
+  Create a variable, `arrayIsAscending` and set it equal to your function invoked.
+  Use the sample array to test this function.
 */
 
 //CODE HERE
 
+function myFunction(array) {
+  for(let i=0; i < array.length; i++) {
+      if(array[i] < array[i-1]) {
+        return true;
+      } else {
+        return false
+      }
+  }
+}
+
+
+let arrayIsAscending = myFunction(sampleArray)
+console.log(arrayIsAscending)
 
 ////////////////// PROBLEM 15 ////////////////////
 
